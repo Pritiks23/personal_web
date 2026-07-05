@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pritik S. — ML Systems &amp; Distributed Training Engineer</title>
+<meta name="description" content="Portfolio of an ML Systems / Distributed Training engineer — PyTorch DDP, tensor parallelism, Kubernetes GPU failure engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <a class="nav__brand" href="#top">pritik<span class="cursor-blink">_</span>sys</a>
+  <nav class="nav__links">
+    <a href="#about">about</a>
+    <a href="#projects">projects</a>
+    <a href="#skills">skills</a>
+    <a href="#education">education</a>
+    <a href="#contact">contact</a>
+  </nav>
+  <a class="nav__cta" href="#contact">connect →</a>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero__text">
+    <p class="eyebrow">ML SYSTEMS &amp; DISTRIBUTED TRAINING ENGINEER</p>
+    <h1 class="hero__title">I build the plumbing<br>under large-scale training.</h1>
+    <p class="hero__sub">
+      Multi-GPU training pipelines, tensor-parallel inference, and the Kubernetes-grade
+      observability that keeps them alive at 2&nbsp;a.m. Hands-on with PyTorch DDP, NCCL,
+      and the failure modes nobody puts in the tutorial.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#projects">view systems →</a>
+      <a class="btn btn--ghost" href="https://github.com/Pritiks23" target="_blank" rel="noopener">github/Pritiks23</a>
+    </div>
+    <div class="hero__ranks" role="img" aria-label="Two GPU ranks synchronized via NCCL all-reduce">
+      <div class="rank">
+        <span class="rank__dot" data-rank="0"></span>
+        <span class="rank__label">rank0 · cuda:0</span>
+      </div>
+      <div class="rank__link">
+        <span class="rank__link-line"></span>
+        <span class="rank__link-tag">all-reduce</span>
+      </div>
+      <div class="rank">
+        <span class="rank__dot" data-rank="1"></span>
+        <span class="rank__label">rank1 · cuda:1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__console" aria-hidden="true">
+    <div class="console">
+      <div class="console__bar">
+        <span class="console__dot console__dot--r"></span>
+        <span class="console__dot console__dot--y"></span>
+        <span class="console__dot console__dot--g"></span>
+        <span class="console__title">torchrun — ddp_train.py</span>
+      </div>
+      <pre class="console__body" id="consoleBody"></pre>
+      <div class="console__metrics">
+        <div class="metric">
+          <span class="metric__label">loss</span>
+          <span class="metric__value" id="metricLoss">1.3953</span>
+        </div>
+        <div class="metric">
+          <span class="metric__label">val_acc</span>
+          <span class="metric__value" id="metricAcc">57.4%</span>
+        </div>
+        <div class="metric">
+          <span class="metric__label">samples/sec/gpu</span>
+          <span class="metric__value" id="metricThroughput">3715</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="section-head">
+    <p class="eyebrow">01 · about</p>
+    <h2>Who's running this process</h2>
+  </div>
+
+  <div class="about__grid">
+    <div class="about__copy">
+      <p>
+        I'm an ML systems and distributed training engineer with hands-on experience across
+        GPU cluster analysis, Linux-based debugging, and large-scale infrastructure workflows.
+        I've built and optimized multi-GPU training pipelines with PyTorch Distributed Data
+        Parallel and tensor parallelism, and I design HPC-inspired troubleshooting environments
+        that simulate MPI execution, Slurm scheduling, systemd services, and the failure modes
+        that show up in production, not in docs.
+      </p>
+      <p>
+        My work sits at the intersection of training and inference performance and the
+        infrastructure that keeps both observable: GPU profiling, containerized systems, and
+        distributed systems design across the full stack — from gradient sync to pod scheduling.
+      </p>
+    </div>
+
+    <div class="neofetch" role="img" aria-label="System information summary">
+      <pre class="neofetch__ascii" aria-hidden="true">
+   ┌────────────┐
+   │  ▓▓▓▓▓▓▓▓  │
+   │  ▓▓  ▓▓    │
+   │  ▓▓▓▓▓▓    │
+   │  ▓▓  ▓▓▓▓  │
+   │  ▓▓    ▓▓  │
+   └────────────┘</pre>
+      <dl class="neofetch__fields">
+        <div><dt>user</dt><dd>pritik@systems</dd></div>
+        <div><dt>role</dt><dd>ML Systems / Distributed Training</dd></div>
+        <div><dt>focus</dt><dd>multi-GPU training · inference scaling · GPU ops</dd></div>
+        <div><dt>stack</dt><dd>PyTorch · NCCL · CUDA · Kubernetes</dd></div>
+        <div><dt>uptime</dt><dd>debugging since undergrad</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="certs">
+    <span class="certs__label">certifications</span>
+    <ul class="certs__list">
+      <li>NVIDIA — AI Infrastructure &amp; Operations</li>
+      <li>NVIDIA — Accelerated Data Science Associate</li>
+      <li>Microsoft — Designing &amp; Building Integrated AI Agent Solutions, Copilot Studio</li>
+      <li>AWS — Cloud Practitioner Core</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects" id="projects">
+  <div class="section-head">
+    <p class="eyebrow">02 · projects</p>
+    <h2>Systems I've shipped</h2>
+    <p class="section-sub">Training → inference → operations. Three stages of the same pipeline, stress-tested at each layer.</p>
+  </div>
+
+  <div class="project-list">
+
+    <!-- PROJECT 1 -->
+    <article class="project reveal">
+      <div class="project__meta">
+        <span class="project__tag">[DDP]</span>
+        <span class="status status--converged">● converged</span>
+      </div>
+      <h3 class="project__title">Distributed Training Pipeline — PyTorch DDP</h3>
+      <p class="project__desc">
+        A distributed deep learning training pipeline across 2× NVIDIA GeForce RTX 3090 GPUs,
+        built on PyTorch Distributed Data Parallel with NCCL as the communication backend.
+        Broadcast-based weight synchronization and rank-based process isolation keep every
+        worker's parameters identical after every step.
+      </p>
+      <ul class="project__points">
+        <li>Engineered a <code>DistributedSampler</code> pipeline that partitions all 60,000 CIFAR-10 images into non-overlapping mini-batches per GPU, eliminating redundant work.</li>
+        <li>Synchronized gradient aggregation via NCCL all-reduce, verified for 100% parameter consistency across workers.</li>
+        <li>Scaled data loading and model sync with <code>torch.multiprocessing</code> across ResNet-based training runs.</li>
+      </ul>
+
+      <div class="project__metrics">
+        <div class="pmetric">
+          <span class="pmetric__value">−40.5%</span>
+          <span class="pmetric__label">loss (1.3953 → 0.8308)</span>
+        </div>
+        <div class="pmetric">
+          <span class="pmetric__value">57.4→65.1%</span>
+          <span class="pmetric__label">CIFAR-10 val accuracy, 3 epochs</span>
+        </div>
+        <div class="pmetric">
+          <span class="pmetric__value">+27%</span>
+          <span class="pmetric__label">throughput → 4,719 samples/sec/GPU</span>
+        </div>
+      </div>
+
+      <div class="project__footer">
+        <div class="chips">
+          <span>PyTorch</span><span>NCCL</span><span>CUDA</span><span>Multiprocessing</span><span>ResNet</span><span>CIFAR-10</span>
+        </div>
+        <a class="project__link" href="https://github.com/Pritiks23/training" target="_blank" rel="noopener">view repo →</a>
+      </div>
+    </article>
+
+    <!-- PROJECT 2 -->
+    <article class="project reveal">
+      <div class="project__meta">
+        <span class="project__tag">[TP]</span>
+        <span class="status status--stable">● stable</span>
+      </div>
+      <h3 class="project__title">Tensor Parallelism Across Multiple GPUs</h3>
+      <p class="project__desc">
+        A 2-GPU tensor-parallel architecture addressing transformer inference scalability limits,
+        built on PyTorch and NCCL. Distributed GPT-style blocks — LayerNorm, TP attention,
+        TP MLP — shard computation across devices while keeping outputs numerically stable.
+      </p>
+      <ul class="project__points">
+        <li>Validated stable <code>[B, T, 768]</code> outputs across 30 inference iterations under sharded computation.</li>
+        <li>Built an end-to-end distributed text embedding pipeline: tokenization → tensor-parallel backbone → pooling → projection.</li>
+        <li>Generated 256-dimensional embeddings for real-world text workloads split across multiple GPUs.</li>
+      </ul>
+
+      <div class="project__metrics">
+        <div class="pmetric">
+          <span class="pmetric__value">2 GPU</span>
+          <span class="pmetric__label">tensor-parallel shard architecture</span>
+        </div>
+        <div class="pmetric">
+          <span class="pmetric__value">30 / 30</span>
+          <span class="pmetric__label">stable inference iterations</span>
+        </div>
+        <div class="pmetric">
+          <span class="pmetric__value">256d</span>
+          <span class="pmetric__label">output embedding dimension</span>
+        </div>
+      </div>
+
+      <div class="project__footer">
+        <div class="chips">
+          <span>PyTorch</span><span>NCCL</span><span>Tensor Parallelism</span><span>GPT-style Blocks</span><span>Inference</span>
+        </div>
+        <a class="project__link" href="https://github.com/Pritiks23/Tensor-parallelism-across-multipleGPUS/" target="_blank" rel="noopener">view repo →</a>
+      </div>
+    </article>
+
+    <!-- PROJECT 3 -->
+    <article class="project reveal">
+      <div class="project__meta">
+        <span class="project__tag">[K8s]</span>
+        <span class="status status--resolved">● 7 incidents resolved</span>
+      </div>
+      <h3 class="project__title">GPU Platform Failure Investigation Lab</h3>
+      <p class="project__desc">
+        A Kubernetes-based distributed training failure lab that reproduces real GPU platform
+        incidents — without needing physical GPUs. Built with PyTorch Jobs, indexed multi-rank
+        workloads, headless Services, and GPU extended resources (<code>nvidia.com/gpu</code>),
+        so incident response can be trained end-to-end.
+      </p>
+      <ul class="project__points">
+        <li>Reproduces CUDA OOM, NCCL collective timeouts, CrashLoopBackOff, ImagePullBackOff, GPU scheduling failures, PVC mount errors, and training deadlocks.</li>
+        <li>Built an observability stack — Prometheus, Grafana, DCGM-style GPU telemetry, Kubernetes Events, pod lifecycle monitoring, alert rules, automated triage.</li>
+        <li>Authored incident-response playbooks and postmortems using <code>kubectl</code>, scheduler events, pod exit codes, and PVC binding/image-pull diagnostics.</li>
+      </ul>
+
+      <div class="project__metrics">
+        <div class="pmetric">
+          <span class="pmetric__value">7</span>
+          <span class="pmetric__label">distinct GPU/K8s incident types</span>
+        </div>
+        <div class="pmetric">
+          <span class="pmetric__value">0</span>
+          <span class="pmetric__label">physical GPUs required</span>
+        </div>
+        <div class="pmetric">
+          <span class="pmetric__value">2</span>
+          <span class="pmetric__label">dashboards — Prometheus + Grafana</span>
+        </div>
+      </div>
+
+      <div class="project__footer">
+        <div class="chips">
+          <span>Kubernetes</span><span>PyTorch</span><span>CUDA</span><span>NCCL</span><span>Prometheus</span><span>Grafana</span>
+        </div>
+        <a class="project__link" href="https://github.com/Pritiks23/Kubernetes_GPU_failure" target="_blank" rel="noopener">view repo →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="skills" id="skills">
+  <div class="section-head">
+    <p class="eyebrow">03 · skills</p>
+    <h2>Core technical strengths</h2>
+  </div>
+
+  <div class="skills__grid">
+    <div class="skill-group">
+      <h3>Distributed Systems &amp; HPC</h3>
+      <div class="chips chips--wrap">
+        <span>MPI</span><span>Slurm-style scheduling</span><span>Job orchestration</span>
+        <span>Cluster resource mgmt</span><span>Gang scheduling</span><span>Failure isolation</span>
+        <span>Multi-node design</span><span>Kubernetes</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>ML Systems &amp; GPU Infrastructure</h3>
+      <div class="chips chips--wrap">
+        <span>PyTorch DDP</span><span>Tensor Parallelism</span><span>NCCL</span><span>ONNX</span>
+        <span>TensorRT</span><span>FP16 Inference</span><span>Batching Strategies</span>
+        <span>KV Cache Concepts</span><span>Nsight Systems</span><span>Kernel Fusion</span>
+        <span>Memory Bandwidth Opt.</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Linux System Engineering</h3>
+      <div class="chips chips--wrap">
+        <span>systemd</span><span>Process Lifecycle Debugging</span><span>Memory Pressure Analysis</span>
+        <span>Disk Diagnostics</span><span>SSH Troubleshooting</span><span>Kernel OOM Behavior</span>
+        <span>Bottleneck Tracing</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Cloud, Infra &amp; Deployment</h3>
+      <div class="chips chips--wrap">
+        <span>AWS EC2</span><span>S3</span><span>IAM</span><span>RDS</span><span>Lambda</span>
+        <span>CloudWatch</span><span>Docker</span><span>GitHub Actions</span><span>CI/CD</span><span>Monitoring</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="education" id="education">
+  <div class="section-head">
+    <p class="eyebrow">04 · education &amp; recognition</p>
+    <h2>Record</h2>
+  </div>
+
+  <ul class="timeline">
+    <li>
+      <span class="timeline__marker"></span>
+      <div class="timeline__content">
+        <h3>University of Washington</h3>
+        <p>Mary Gates Research Symposium Presenter</p>
+      </div>
+    </li>
+    <li>
+      <span class="timeline__marker"></span>
+      <div class="timeline__content">
+        <h3>2024 Undergraduate Research Symposium Prize</h3>
+        <p>Awarded for original research contribution</p>
+      </div>
+    </li>
+    <li>
+      <span class="timeline__marker"></span>
+      <div class="timeline__content">
+        <h3>AWS AI &amp; ML Scholars</h3>
+        <p>Award recipient</p>
+      </div>
+    </li>
+    <li>
+      <span class="timeline__marker"></span>
+      <div class="timeline__content">
+        <h3>GitHub Universe</h3>
+        <p>Featured for open source distributed systems work</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="contact__box">
+    <p class="eyebrow">05 · contact</p>
+    <h2>Open a connection</h2>
+    <p class="contact__sub">Reach out about distributed systems roles, GPU infrastructure work, or just to talk NCCL debugging war stories.</p>
+    <div class="contact__actions">
+      <a class="btn btn--primary" href="mailto:youremail@example.com">youremail@example.com</a>
+      <a class="btn btn--ghost" href="https://github.com/Pritiks23" target="_blank" rel="noopener">github/Pritiks23</a>
+      <a class="btn btn--ghost" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Pritik S. — built with plain HTML/CSS/JS, no framework required.</p>
+  <p class="footer__status"><span class="status-dot"></span> all systems nominal</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
